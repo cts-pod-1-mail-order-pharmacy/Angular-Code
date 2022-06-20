@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+      <h2 class="card-title">{{name}}</h2>
+      <p class="manuf">By {{manufacturer}}</p>
+      <div class="row1">
+        <h5>Drug ID: {{drugId}}</h5>
+        <h5>Packages Available(units): {{packages}}</h5>
+      </div>
+      <div class="row1">
+        <h5>Manufactured Date: {{manfDate.substring(0,10)}}</h5>
+        <h5>Expiry Date: {{expiryDate.substring(0,10)}}</h5>
+      </div>
+      <div class="cost">
+        <h5>Cost: {{cost}} Rs.</h5>
+      </div>
+    </div>
+    <h2>Cities Table</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Location ID</th>
+          <th scope="col">Location Name</th>
+          <th scope="col">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of drugDetails; let i=index">
+          <th scope="row">{{i}}</th>
+          <td>{{item.id}}</td>
+          <td>{{item.location}}</td>
+          <td>{{item.quantity}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

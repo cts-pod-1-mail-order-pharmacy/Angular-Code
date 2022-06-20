@@ -1,0 +1,37 @@
+<div class="dashboard">
+    <form class="d-flex searchbox" #searchForm="ngForm" role="search" (submit)="getDrugs(searchForm.value)">
+        
+        <input class="form-control me-2" type="search"  name="search" placeholder="Search Drugs" aria-label="Search" [(ngModel)]="drugName"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+        
+    </form>
+    <nav class="menu" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+      <header class="avatar">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
+        <h2>{{username}}</h2>
+      </header>
+        <ul>
+        <li tabindex="0" class="icon-dashboard" routerLink="/subscribe"><i class="bi bi-cart"></i><span>Subscribe</span></li>
+        <li tabindex="0" class="icon-dashboard" routerLink="/viewsubscriptions"><i class="bi bi-folder"></i><span>My Subscriptions</span></li>
+        <li tabindex="0" class="icon-dashboard" routerLink="/viewRefillStatus"><i class="bi bi-droplet-half"></i><span>Refill Status</span></li>
+        <li tabindex="0" class="icon-dashboard" routerLink="/applyRefill"><i class="bi bi-window-plus"></i><span>Refill Adhoc</span></li>
+      </ul>
+      <a (click)="logout()" class="btn btn-danger btn-logout">Logout</a>
+    </nav>
+    <div class="centralize" *ngIf="!founded">
+      <i class="bi bi-heart-pulse-fill main-logo"></i>
+    </div>
+    <div class="container dashboard-main" *ngIf="founded">
+        <app-card
+        [drugId]="details.id"
+        [name]="details.name"
+        [manufacturer]="details.manufacturer"
+        [packages]="details.unitsPackage"
+        [manfDate]="details.manufacturedDate"
+        [expiryDate]="details.expiryDate"
+        [drugDetails]="details.drugDetails"
+        [cost]="details.cost"
+        ></app-card>
+    </div>
+</div>

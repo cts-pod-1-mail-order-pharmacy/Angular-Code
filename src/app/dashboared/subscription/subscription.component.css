@@ -1,0 +1,21 @@
+.details1{
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    text-align: center;
+}
+.container{
+    width: 60%;
+    height: 50%;
+}
+.card{
+    width: 20rem;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+}
+span.badge.rounded-pill.text-bg-primary {
+    background-color: yellowgreen;
+}

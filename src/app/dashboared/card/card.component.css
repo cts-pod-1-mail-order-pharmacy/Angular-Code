@@ -1,0 +1,13 @@
+.card{
+    width: 100%;
+}
+h2,h5,p{
+    color: black;
+}
+.card-title,.manuf{
+    text-align: center;
+}
+.row1{
+    display: flex;
+    justify-content: space-between;
+}

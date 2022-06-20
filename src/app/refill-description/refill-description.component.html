@@ -1,0 +1,14 @@
+<div class="main">
+    <h2>Subscription ID:{{getRefillStatusData[0].subscriptionId}}</h2>
+    <div class="container">
+        <app-refill-card
+        *ngFor="let item of getRefillStatusData"
+        [refillOrderId]="item.refillOrderId"
+        [status]="item.status"
+        [refillDate]="item.refillDate"
+        [refillDateNext]="item.refillDateNext"
+        [visited]="item.visited"
+        [refillOrderLine]="item.refillOrderLine"
+        ></app-refill-card>
+    </div>
+</div>

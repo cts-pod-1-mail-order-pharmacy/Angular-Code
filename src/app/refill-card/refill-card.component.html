@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-body">
+      <div class="row1">
+        <h5>Refill Order ID: {{refillOrderId}}</h5>
+        <h5>Refill Status: {{status}}</h5>
+      </div>
+      <div class="row1">
+        <h5>Refill Date: {{refillDate.substring(0,10)}}</h5>
+        <h5>Next Date of Refill: {{refillDateNext.substring(0,10)}}</h5>
+      </div>
+      <div class="cost">
+        <h5>Visited: {{visited}}</h5>
+      </div>
+    </div>
+    <h2>Drugs to Refill</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Refill ID:</th>
+          <th scope="col">Drug Name</th>
+          <th scope="col">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of refillOrderLine; let i=index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{item.id}}</td>
+          <td>{{item.drug}}</td>
+          <td>{{item.drugQuantity}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

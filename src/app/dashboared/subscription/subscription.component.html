@@ -1,0 +1,60 @@
+<div class="container">
+    <h2>SUBSCRIBE DRUGS</h2>
+<form class="subscription" #subscriptionForm="ngForm" (submit)="doSubscribe(subscriptionForm.value)">
+    <div class="details1">
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Insurance Policy Number</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="insurancePolicy" [(ngModel)]="insurancePolicy"/>
+</div> 
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Insurance Provider</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="insuranceProvider" [(ngModel)]="insuranceProvider"/>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Prescription Date</label>
+    <input type="date" class="form-control" id="exampleFormControlInput1" name="prescriptionDate" [(ngModel)]="prescriptionDate"/>
+</div>
+</div>
+<div class="card-container">
+<div class="card">
+<div class="card-body">
+    <h5 class="card-title">Add Your Drugs</h5>
+<div class="mb-3">
+    <label  class="form-label">Drug Id</label>
+    <input type="text" class="form-control" name="drugId" (input)="onChangeDrugId($event)"/>
+    <label  class="form-label">Drug Name</label>
+    <input type="text" class="form-control" name="drugName" (input)="onChangeDrugName($event)"/>
+    <label  class="form-label">Quantity</label>
+    <input type="text" class="form-control" name="Quantity" (input)="onChangeQuantity($event)"/>
+    <a class="btn btn-primary" (click)="addDrug()">ADD</a>
+    <span class="badge rounded-pill text-bg-primary" *ngFor="let item of arr">{{item.drugName}}</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Dosage Defination Per Day</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="dosage" [(ngModel)]="dosage"/>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Prescription Course</label>
+    <input type="text" class="form-control" id="exampleFormControlInput6" name="course" [(ngModel)]="course"/>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Doctor Details</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="doctor" [(ngModel)]="doctor"/>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Your Location</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="location" (input)="onChangeLocation($event)"/>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Refill Description</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="refill" (input)="onChangeRefill($event)"/>
+</div>
+<div>
+    <button class="btn btn-success" type="submit">SUBMIT</button>
+</div>
+
+</form>
+</div>

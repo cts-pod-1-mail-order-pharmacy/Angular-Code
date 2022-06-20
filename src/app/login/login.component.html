@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <div class="logo">
+        <img src="https://media.istockphoto.com/vectors/blue-and-green-medical-cross-health-vector-id1275720974?k=20&m=1275720974&s=612x612&w=0&h=UTYONlQmk-ku34pq9m0sn-GzxPJVW7NdFQsJibSub9s=" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        MailOrder
+    </div>
+    <form class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="userid" id="userid" placeholder="User ID" #userid>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="userName" id="userName" placeholder="Username" #username>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password" id="pwd" placeholder="Password" #password>
+        </div>
+        <div class="d-flex align-items-center" style="color: red;" *ngIf="!isTokenGenerated">
+            "Invalid Credentials"
+        </div>
+        <button class="btn mt-3" (click)="onSubmit(userid.value,username.value, password.value)">Login</button>
+    </form>
+    <div class="text-center fs-6">
+        <a href="#">Forget password?</a> or <a routerLink="/register">Sign up</a>
+    </div>
+</div>
